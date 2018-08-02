@@ -33,11 +33,11 @@
 
     <?php if (is_home() || is_front_page()) : ?>
 
-        <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+        <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# website: https://ogp.me/ns/website#">
 
     <?php else: ?>
 
-        <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+        <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#">
 
     <?php endif; ?>
         
@@ -179,7 +179,7 @@
 
             <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/magic.min.css">
 
-            <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+            <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
 
 
 
@@ -331,7 +331,7 @@
                             'social graph and distribution power to your site.'
                         ),
                         link: 'https://developers.facebook.com/docs/reference/javascript/',
-                        picture: 'http://www.fbrell.com/public/f8.jpg'
+                        picture: 'https://www.fbrell.com/public/f8.jpg'
                     },
                           function (response) {
                         if (response && response.post_id) {
