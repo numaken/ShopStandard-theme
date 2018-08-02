@@ -1,0 +1,2 @@
+# ShopStandard-theme
+ショップスタンダード
