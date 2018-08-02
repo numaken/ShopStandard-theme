@@ -1,0 +1,69 @@
+/*
+WooCommerce Style CSS
+*/
+form.woocommerce-ordering { position: absolute; top: 0; right: 0; }
+.woocommerce-breadcrumb { padding: 0 0; }
+/*.woocommerce-breadcrumb { padding: 0.5em 1.4em; }
+.woocommerce-breadcrumb { background: #fff; }*/
+.woocommerce h2.page-title { font-size: 4.0rem;font-weight: 700; }
+p.woocommerce-result-count { width: 100%; padding: 1em; text-align: center; font-size: 0.7em; text-transform: uppercase; color: #c0c0c0; }
+.woocommerce ul.products { list-style: none; margin: 0 auto; padding: 0; }
+.woocommerce ul.products li > a { display: block; }
+.woocommerce ul.products li > a:hover { color: #fff; }
+
+.woocommerce ul.products li > a img {  }
+span.onsale { display: block; width: 70px; height: 70px; text-align: center; line-height: 70px; position: absolute; z-index: 998; top: 20px; right: 20px; font-size: 14px; text-transform: uppercase; background: #19B5FE; color: #fff;
+-webkit-border-radius: 999px;
+border-radius: 999px;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+.woocommerce ul.products li > a span.price del { display: block; font-size: 0.7em; }
+.woocommerce ul.products li > a .cont_cell { display: block; position: absolute; z-index: 997; top: 0; left: 0; width: 100%; height: 100%; padding: 2em; background: rgba(0,0,0,.1); text-shadow: 0 0 3px rgba(0,0,0,.2);
+-webkit-transition: 0.3s ease-in;
+transition: 0.3s ease-in;
+}
+.woocommerce ul.products li:hover a .cont_cell  { background: rgba(0,0,0,.6); }
+.woocommerce ul.products li > a.add_to_cart_button { position: absolute; z-index: 999; bottom: 2em; left: 2em; }
+.woocommerce-pagination { clear: both; margin: 40px auto; }
+.woocommerce-pagination ul { list-style: none; margin: 0 auto; text-align: center; }
+.woocommerce-pagination ul li { display: inline; }
+.woocommerce-pagination ul li .page-numbers { padding: 0.6em 1em; border: 3px solid #E1B866; }
+.woocommerce-pagination ul li .page-numbers:hover { border-color: #666; color: #666; }
+.woocommerce-pagination ul li .page-numbers:active { border-color: #e0e0e0; color: #e0e0e0; }
+.woocommerce-pagination ul li span.page-numbers.current { border-color: #e0e0e0; color: #e0e0e0; }
+
+/*SINGLE PRODUCT*/
+.woocommerce .product { position: relative; }
+.woocommerce .images a.woocommerce-main-image { display: block; margin: 0 auto; text-align: center; }
+.woocommerce .images img { display: block; margin: 0 auto; }
+.woocommerce .images .thumbnails img { display: block; float: left; margin: 1.2em 1.2em 0 0; }
+.woocommerce .summary { clear: both; }
+.woocommerce h1.product_title { padding: 1em 0 0 0; font-size: 3.5em; text-align: center; }
+
+.woocommerce .woocommerce-product-rating { text-align: center; }
+.woocommerce p.price { text-align: center; font-size: 2em; }
+/*quantity*/
+.woocommerce #content .quantity { clear: both; position: relative; text-align: center; margin: 0 auto; width: 200px; padding: 0 0 80px 0; }
+.woocommerce input.input-text.qty, .woocommerce input.minus, .woocommerce input.plus { display: block; margin: 0; }
+.woocommerce input.minus, .woocommerce input.plus { position: absolute; top: 60px; left: 0; width: 48%; }
+.woocommerce input.plus { left: auto; right: 0; }
+.woocommerce input.input-text.qty { text-align: center; width: 100%; }
+.woocommerce button.single_add_to_cart_button { display: block; clear: both; margin: 20px auto; font-size: 1.625em; padding: 0.8em 1.6em; }
+.woocommerce button.single_add_to_cart_button:hover { border-color: #2ECC71; color: #2ECC71; }
+/*product meta*/
+.woocommerce .product_meta { text-align: center; }
+.woocommerce-tabs { clear: both; margin: 2em 0 0 0; }
+.woocommerce ul.tabs { list-style: none; margin: 0; padding: 0; }
+.woocommerce ul.tabs li { display: inline; margin: 0 6px 0 0; padding: .6em 1em; border: 3px solid #f7f7f7; border-bottom: none; }
+.woocommerce ul.tabs li.active { border-color: #e0e0e0; }
+.woocommerce #tab-description { margin: 6px 0 0 0; padding: 2em; border: 3px solid #e0e0e0; }
+/*Related Product*/
+.woocommerce .related.products { clear: both; }
+
+@media (max-width:1024px) {
+form.woocommerce-ordering { position: relative; top: auto; right: auto; float: right; }
+}
+
+@media (max-width:768px) {
+.woocommerce .images .thumbnails img { display: block; width: 42%; float: left; margin: 1.2em 3% 0 3%; }
+}

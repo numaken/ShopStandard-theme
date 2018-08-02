@@ -1,0 +1,166 @@
+<?php
+/**
+ The template name:オブジェクト-カスタムページ1
+ */
+get_header(); ?>
+
+<?php
+
+//固定ページのカスタムフィールドより入力されたDATAを他ページでも使用可能にする
+global $code;
+$get_page_id = get_page_by_path("about"); //スラッグ名からページのパス取得
+$get_page_id = $get_page_id->ID; //ページパスからページidを取得
+$code =  get_post_meta($get_page_id,'apicode' ,true); //ページIDを元にカスタムフィールドの値取得
+
+$json = @file_get_contents($code);
+if($http_response_header[0] == 'HTTP/1.1 404 Not Found'){
+print '404 Not Foundです。';
+}
+global $obj;
+$obj = json_decode($json, true);
+
+?>
+
+<!-- カスタムページ1 -->
+
+    <?php
+
+    //カスタム1の画像
+    global $custom1_img;
+    $get_page_id = get_page_by_path("customs"); //スラッグ名からページのパス取得
+    $get_page_id = $get_page_id->ID; //ページパスからページidを取得
+    $custom1_img =  get_post_meta($get_page_id,'custom1_img' ,true); //ページIDを元にカスタムフィールドの値取得
+
+    //カスタム1のタイトル
+    global $custom1_title;
+    $get_page_id = get_page_by_path("customs"); //スラッグ名からページのパス取得
+    $get_page_id = $get_page_id->ID; //ページパスからページidを取得
+    $custom1_title =  get_post_meta($get_page_id,'custom1_title' ,true); //ページIDを元にカスタムフィールドの値取得
+
+    //カスタム1の説明文
+    global $custom1_description;
+    $get_page_id = get_page_by_path("customs"); //スラッグ名からページのパス取得
+    $get_page_id = $get_page_id->ID; //ページパスからページidを取得
+    $custom1_description =  get_post_meta($get_page_id,'custom1_description' ,true); //ページIDを元にカスタムフィールドの値取得
+
+    //カスタム1のボタン色
+    global $custom1_btn_color;
+    $get_page_id = get_page_by_path("customs"); //スラッグ名からページのパス取得
+    $get_page_id = $get_page_id->ID; //ページパスからページidを取得
+    $custom1_btn_color =  get_post_meta($get_page_id,'custom1_btn_color' ,true); //ページIDを元にカスタムフィールドの値取得
+
+    //カスタム1のボタン名
+    global $custom1_btn_name;
+    $get_page_id = get_page_by_path("customs"); //スラッグ名からページのパス取得
+    $get_page_id = $get_page_id->ID; //ページパスからページidを取得
+    $custom1_btn_name =  get_post_meta($get_page_id,'custom1_btn_name' ,true); //ページIDを元にカスタムフィールドの値取得
+
+    //カスタム1のボタンリンク先
+    global $custom1_btn_url;
+    $get_page_id = get_page_by_path("customs"); //スラッグ名からページのパス取得
+    $get_page_id = $get_page_id->ID; //ページパスからページidを取得
+    $custom1_btn_url =  get_post_meta($get_page_id,'custom1_btn_url' ,true); //ページIDを元にカスタムフィールドの値取得
+
+    //カスタム1の背景画像
+    global $custom1_bg_image;
+    $get_page_id = get_page_by_path("customs"); //スラッグ名からページのパス取得
+    $get_page_id = $get_page_id->ID; //ページパスからページidを取得
+    $custom1_bg_image =  get_post_meta($get_page_id,'custom1_bg_image' ,true); //ページIDを元にカスタムフィールドの値取得
+
+    //カスタム1の背景色
+    global $custom1_bg_color;
+    $get_page_id = get_page_by_path("customs"); //スラッグ名からページのパス取得
+    $get_page_id = $get_page_id->ID; //ページパスからページidを取得
+    $custom1_bg_color =  get_post_meta($get_page_id,'custom1_bg_color' ,true); //ページIDを元にカスタムフィールドの値取得
+
+    //カスタム1のタイトル色
+    global $custom1_title_color;
+    $get_page_id = get_page_by_path("customs"); //スラッグ名からページのパス取得
+    $get_page_id = $get_page_id->ID; //ページパスからページidを取得
+    $custom1_title_color = get_post_meta($get_page_id,'custom1_title_color' ,true); //ページIDを元にカスタムフィールドの値取得
+
+    //カスタム1の文字色
+    global $custom1_font_color;
+    $get_page_id = get_page_by_path("customs"); //スラッグ名からページのパス取得
+    $get_page_id = $get_page_id->ID; //ページパスからページidを取得
+    $custom1_font_color =  get_post_meta($get_page_id,'custom1_font_color' ,true); //ページIDを元にカスタムフィールドの値取得
+
+    ?>
+
+<section id="customs1" class="customs1">
+
+    <div class="parallax-inner">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="parallax-inner-captionL">
+                    <?php
+
+                    if ($custom1_title == null){
+                        // 画像が無い場合の処理
+
+                        echo '<h2>タイトルが設定されていません</h2>';
+
+                    }else{
+
+                        echo '<h2 style="color:' . $custom1_title_color . ';">' . $custom1_title . '</h2>';
+
+                    }
+
+                    ?>
+
+                    <?php
+
+                    if ($custom1_description == null){
+                        // 画像が無い場合の処理
+
+                        echo '<h4>文言が設定されていません</h4>';
+
+                    }else{
+
+                        $text1 = $custom1_description;
+                        $string1 = mb_strimwidth( $text1, 0, 280, "...", "UTF-8" );
+                        echo '<h4 style="color:' . $custom1_font_color . ';">' . $string1 . '</h4>';
+
+                    }
+
+                    ?>
+
+                    <?php
+
+                    if ($custom1_btn_url == null){
+
+
+                    }else{
+
+                        echo '<a href="' . $custom1_btn_url . '/" class="btn btn-danger" style="background-color:#' . $custom1_btn_color . ';">'.$custom1_btn_name.'</a>';
+                    }
+
+                    ?>
+
+                </div>
+
+            </div>
+
+            <?php
+
+            $imgurl = wp_get_attachment_image_src($custom1_img, 'full'); //サイズは自由に変更してね
+            if ($imgurl == null){
+                // 画像が無い場合の処理
+
+                echo '<img src="' . get_template_directory_uri() . '/images/nowprinting_vga_sm.png" class="attachment-imgR" alt="' . $osusume[0]['title'] . '">';
+
+            }else{
+
+                echo '<img src="' . $imgurl[0] . '" class="attachment-imgR" alt="' . $osusume[0]['title'] . '">';
+            }
+
+            ?>
+
+        </div><!-- /.container -->
+
+    </div>
+
+</section>

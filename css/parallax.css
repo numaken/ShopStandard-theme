@@ -1,0 +1,59 @@
+/* --------------------------------
+
+parallax
+
+-------------------------------- */
+
+
+/*固定する背景*/
+.parallax {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 0;
+}
+.parallax-bg {
+    /* background-attachment: fixed; カルーセルのタイミングでパララックス背景画像がブリンクするのでコメントアウト*/
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50%;
+}
+/*各背景の画像*/
+.img-bg-01 {
+    background-image: url('画像のURL');
+}
+.img-bg-02 {
+    background-image: url('画像のURL');
+}
+.img-bg-03 {
+    background-image: url('画像のURL');
+}
+.img-bg-04 {
+    background-image: url('画像のURL');
+}
+.img-bg-05 {
+    background-image: url('画像のURL');
+}
+
+/*スクロールするコンテンツ*/
+.scrollbox1 {
+    background-color: #;
+}
+.scrollbox2 {
+    background-color: #;
+}
+.scrollbox3 {
+    background-color: #;
+}
+.scrollbox4 {
+    background-color: #;
+}
+.scrollbox5 {
+    background-color: #;
+}
+.scrollbox6 {
+    background-color: #;
+}
