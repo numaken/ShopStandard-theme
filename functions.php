@@ -688,7 +688,7 @@ function auto_post_thumbnail_image() {
         if (empty($matches[0])) {
             preg_match('%(?:youtube\.com/(?:user/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $post[0]->post_content, $match);
             if (!empty($match[1])) {
-                $matches=array(); $matches[0]=$matches[1]=array('http://img.youtube.com/vi/'.$match[1].'/mqdefault.jpg');
+                $matches=array(); $matches[0]=$matches[1]=array('https://img.youtube.com/vi/'.$match[1].'/mqdefault.jpg');
             }
         }
 
@@ -802,7 +802,7 @@ function breadcrumb( $args = array() ) {
         'home_text'         => '&nbsp;トップ',
         'delimiter'         => '&nbsp;&nbsp;',
         'crumb_microdata'   => ' itemprop="breadcrumb"',
-        'li_microdata'      => ' itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"',
+        'li_microdata'      => ' itemscope="itemscope" itemtype="https://data-vocabulary.org/Breadcrumb"',
         'url_microdata'     => ' itemprop="url"',
         'title_microdata'   => ' itemprop="title"'
 );
@@ -840,7 +840,7 @@ function breadcrumb( $args = array() ) {
     );
     function current_crumb_tag( $current_permalink, $current_text = '', $args = array(), $current_class = 'current-crumb' ) {
         $defaults = array(
-            'li_microdata'      => ' itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"',
+            'li_microdata'      => ' itemscope="itemscope" itemtype="https://data-vocabulary.org/Breadcrumb"',
             'url_microdata'     => ' itemprop="url"',
             'title_microdata'   => ' itemprop="title"'
         );
@@ -1262,13 +1262,13 @@ add_action('customize_register', 'gemstone_customize_register');
 // OGP
 function ogp_prefix() {
     if (!is_admin()) {
-        $ogp_ns = 'og: http://ogp.me/ns#';
-        $fb_ns  = 'fb: http://ogp.me/ns/fb#';
+        $ogp_ns = 'og: https://ogp.me/ns#';
+        $fb_ns  = 'fb: https://ogp.me/ns/fb#';
 
         if (!is_singular()) {
-            $type_ns = 'website: http://ogp.me/ns/website#';
+            $type_ns = 'website: https://ogp.me/ns/website#';
         } else {
-            $type_ns = 'article: http://ogp.me/ns/article#';
+            $type_ns = 'article: https://ogp.me/ns/article#';
         }
         printf('prefix="%1$s %2$s %3$s"', $ogp_ns, $fb_ns, $type_ns);
     }
@@ -2081,7 +2081,7 @@ function ogp_meta() {
         $url = esc_url(home_url('/'));
         $site_name = $obj['title'];
         $title = $site_name;
-        $image = 'http://example.com/xxx.png';
+        $image = 'https://example.com/xxx.png';
         $description = $obj['description'];
         $fb_app_id = '201350509905718';
 
